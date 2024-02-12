@@ -12,12 +12,49 @@
 //랜덤번호 지정
 //유저 번호 입력 go버튼을 누르기
 let computerNum = 0;
+
+let chance = 5;
+let chanceView = document.querySelector("#chance");
 let usernum = document.getElementById("usernum");
 let playbtn = document.getElementById("bth");
 let viewnum = document.getElementById("viewnum");
+let resetbtn = document.querySelector("#resetbtn");
+resetbtn.addEventListener("click", reset);
+let isNum = false;
+let num = [];
+// esaymade;
+// hardmade;
+
 playbtn.addEventListener("click", play);
+function reset() {
+  playbtn.disabled = false;
+  pickRandomNum();
+  usernum.value = "";
+  chance = 5;
+  viewnum.textContent = "다시! 처음부터!";
+  chanceView.textContent = `남은기회는 단.. ${chance}번`;
+}
 function play() {
   userValue = usernum.value;
+  isNum = false;
+  if (usernum.value == "") {
+    alert("입력을 안하셨어요.");
+    return 0;
+  }
+  if (num.length == 0) {
+    num.push(userValue);
+    chance -= 1;
+  } else {
+    for (let i = 0; i < num.length; i++) {
+      if (num[i] == userValue) {
+        viewnum.textContent = "이미 입력한 번호임";
+        usernum.value = "";
+        return 0;
+      }
+    }
+    num.push(userValue);
+    chance -= 1;
+  }
   if (userValue < computerNum) {
     viewnum.textContent = "up";
   } else if (userValue > computerNum) {
@@ -25,7 +62,17 @@ function play() {
   } else {
     viewnum.textContent = "맞췄습니다.";
   }
+
+  chanceView.textContent = `남은기회는 단.. ${chance}번`;
+  usernum.value = "";
+
+  if (chance == 0) {
+    playbtn.disabled = true;
+    viewnum.textContent =
+      "기회가 다끝났어요 ㅠㅠ 다시 하시려면 리셋버튼을 눌러주세요~!";
+  }
 }
+
 console.log(usernum);
 function pickRandomNum() {
   computerNum = Math.floor(Math.random() * 100 + 1);
