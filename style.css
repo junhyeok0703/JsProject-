@@ -1,0 +1,15 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+button {
+  width: 150px;
+  height: 150px;
+  background-color: black;
+}
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 30px;
+}

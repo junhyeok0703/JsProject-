@@ -33,7 +33,7 @@ function render() {
       <div>${taskList[i]}</div>
       <div>
         <button>체크</button>
-        <button>식제</button>
+        <button>삭제</button>
       </div>
     </div>`;
   }
