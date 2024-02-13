@@ -1,0 +1,62 @@
+body {
+  background-image: url();
+
+  left: 100px;
+  position: absolute;
+  margin-left: -50px;
+  background-color: #000;
+  color: black;
+  /* 애니메이션 이름 */
+  animation-name: jaehee;
+  animation-duration: 3s;
+  animation-duration: leaner;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 키프레임 이름 = 애니메이션 이름 */
+@-webkit-keyframes jaehee {
+  0% {
+    left: 100px;
+  }
+  100% {
+    left: 600px;
+  }
+}
+.Todo-Template {
+  background-image: url("./phone-7437793_1920.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* position: absolute; */
+
+  width: 700px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.Todo-Template h1 {
+  margin-top: 100px;
+  font-size: 24px;
+}
+.task-tab {
+  display: flex;
+  border-bottom: 1px solid red;
+  justify-content: space-around;
+}
+.task-area {
+  border: 1px black solid;
+  width: 270px;
+  margin-top: 10px;
+}
+.task-area div {
+  padding: 3px;
+}
+.tasks {
+  display: flex;
+  justify-content: space-between;
+}
