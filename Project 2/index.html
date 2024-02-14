@@ -1,3 +1,5 @@
+<!-- Updated HTML -->
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,15 +14,12 @@
         <input id="task-input" type="text" />
         <button id="input-btn">+</button>
       </div>
-      <div class="task-area">
-        <div class="task-tab">
-          <div>모두</div>
-          <div>진행중</div>
-          <div>끝남</div>
-        </div>
-        <div id="task-board">
-         
+      <div class="task-tab">
+        <div id="all-tab" onclick="showAllTasks()">모두</div>
+        <div id="in-progress-tab" onclick="showInProgressTasks()">진행중</div>
+        <div id="completed-tab" onclick="showCompletedTasks()">끝남</div>
       </div>
+      <div id="task-board"></div>
     </div>
 
     <script src="./main.js"></script>

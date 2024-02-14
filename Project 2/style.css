@@ -1,24 +1,103 @@
 body {
-  background-image: url();
-
-  left: 100px;
-  position: absolute;
-  margin-left: -50px;
-  background-color: #000;
-  color: black;
-  /* 애니메이션 이름 */
-  animation-name: jaehee;
-  animation-duration: 3s;
-  animation-duration: leaner;
-  animation-iteration-count: 1;
-  animation-direction: alternate;
-  animation-fill-mode: forwards;
+  margin: 0;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-family: "Arial", sans-serif;
 }
-/* 키프레임 이름 = 애니메이션 이름 */
-@-webkit-keyframes jaehee {
+
+.Todo-Template {
+  background-image: url("./phone-7437793_1920.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 700px;
+  height: 700px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.Todo-Template h1 {
+  margin-top: 100px;
+  font-size: 24px;
+  color: black;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.task-tab {
+  display: flex;
+  border-bottom: 2px solid #eee;
+  padding: 10px;
+}
+
+.task-tab div {
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+.task-tab div:hover {
+  background-color: #ddd;
+}
+
+.task-tab div.active {
+  background-color: #ddd;
+}
+
+.task-area {
+  border: 1px solid black;
+  width: 270px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+.task-area div {
+  padding: 10px;
+}
+
+.tasks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.tasks:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.tasks div {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.tasks button {
+  padding: 8px;
+  margin-left: 10px;
+  cursor: pointer;
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+}
+
+.tasks button:hover {
+  background-color: #d32f2f;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+/* Animation Keyframes */
+@keyframes jaehee {
   0% {
     left: 100px;
   }
@@ -26,37 +105,13 @@ body {
     left: 600px;
   }
 }
-.Todo-Template {
-  background-image: url("./phone-7437793_1920.png");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  /* position: absolute; */
 
-  width: 700px;
-  height: 700px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-.Todo-Template h1 {
-  margin-top: 100px;
-  font-size: 24px;
-}
-.task-tab {
-  display: flex;
-  border-bottom: 1px solid red;
-  justify-content: space-around;
-}
-.task-area {
-  border: 1px black solid;
-  width: 270px;
-  margin-top: 10px;
-}
-.task-area div {
-  padding: 3px;
-}
-.tasks {
-  display: flex;
-  justify-content: space-between;
+/* Apply the animation */
+body {
+  animation-name: jaehee;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
 }
