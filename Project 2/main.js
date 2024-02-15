@@ -20,13 +20,14 @@ function addTask() {
   render();
 }
 
-function render() {
+function render(filteredTasks) {
+  let tasksToRender = filteredTasks || taskList;
   let resultHTML = "";
-  for (let i = 0; i < taskList.length; i++) {
+  for (let i = 0; i < tasksToRender.length; i++) {
     resultHTML += `
         <div class="tasks">
-            <div class="${taskList[i].completed ? "completed" : ""}">${
-      taskList[i].text
+            <div class="${tasksToRender[i].completed ? "completed" : ""}">${
+      tasksToRender[i].text
     }</div>
             <div>
                 <button onclick="checkTask(${i})">체크</button>
@@ -48,7 +49,7 @@ function deleteTask(index) {
 }
 
 function showAllTasks() {
-  render(taskList);
+  render();
 }
 
 function showInProgressTasks() {
