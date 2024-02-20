@@ -5,7 +5,7 @@ let page = 1;
 const pageSize = 10;
 let groupSize = 5;
 let url = new URL(
-  `https://newsapi.org/v2/top-headlines?country=kr&apiKey=${API_KEY}`
+  `https://main--sparkly-vacherin-77cd1f.netlify.app/project%203/top-headlines?country=kr&apiKey=${API_KEY}`
 );
 
 const getNews = async () => {
@@ -34,7 +34,7 @@ const getNews = async () => {
 
 const getLatestNews = async () => {
   url = new URL(
-    `http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines`
+    `https://main--sparkly-vacherin-77cd1f.netlify.app/project%203/top-headlines`
   ); //URL인스턴스로 다양한 함수를 사용가능. (객체가생김)
   getNews();
 };
@@ -48,7 +48,7 @@ menus.forEach((menu) =>
 async function getnewsbycategory(event) {
   let category = event.target.textContent.toLowerCase();
   url = new URL(
-    `http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines?category=${category}`
+    `https://main--sparkly-vacherin-77cd1f.netlify.app/project%203/top-headlines?category=${category}`
   ); //URL인스턴스로 다양한 함수를 사용가능. (객체가생김)
   getNews();
 }
@@ -56,7 +56,7 @@ async function getnewsbycategory(event) {
 const getnewByKeyword = async () => {
   const keyword = document.getElementById("search-input").value;
   url = new URL(
-    `http://times-node-env.eba-appvq3ef.ap-northeast-2.elasticbeanstalk.com/top-headlines?&q=${keyword}`
+    `https://main--sparkly-vacherin-77cd1f.netlify.app/project%203/top-headlines?&q=${keyword}`
   );
   getNews();
 };
