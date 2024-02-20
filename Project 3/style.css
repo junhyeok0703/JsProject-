@@ -1,0 +1,36 @@
+.head-line {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.head-line svg {
+    width: 430px;
+}
+
+.menus {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 10px;
+    border-bottom: 2px double gray;
+    justify-content: center;
+}
+
+.menus button {
+    border: 0px;
+    background-color: white;
+}
+
+button:hover {
+    background-color: aqua;
+}
+
+.news-img-size {
+    max-width: 100%;
+    max-height: 250px;
+}
+
+.news {
+    border-bottom: 1px black solid;
+}
